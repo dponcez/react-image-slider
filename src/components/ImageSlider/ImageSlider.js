@@ -37,7 +37,7 @@ const ImageSlider = ({slides}) => {
       if(!loading) setLoading(true);
       timerRef.current = setTimeout(() => {
         handleNextButton()
-      }, 2000)
+      }, 3000)
       
     }catch(error){
       if(error) setError(error)
@@ -50,7 +50,6 @@ const ImageSlider = ({slides}) => {
     }
   }, [handleNextButton])
 
-  // if(!loading) return 'Loading...'
   if(error) return 'Something went wrong!'
 
   return (
