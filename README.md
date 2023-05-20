@@ -991,4 +991,6 @@ const ImageSlider = ({slides}) => {
 export default ImageSlider
 ```
 
-19. Now in your terminal **CLI** or **Git Bash** type *npm start* to run your react project.
+19. Now in your terminal **CLI** or **Git Bash** type *npm start* to run your React project, you will see something like the image below.
+
+![image-slider](https://github.com/dponcez/react-image-slider/assets/69610351/4602262c-9f24-4e7f-a6ec-a70945555281)
