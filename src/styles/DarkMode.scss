@@ -1,0 +1,21 @@
+.dark--mode__container {
+  position: fixed;
+  top: .6rem;
+  right: 0;
+  z-index: 2;
+
+  .dark--mode__button {
+    margin-block: 1em;
+    margin-inline-end: 1em;
+  }
+
+  .btn {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+
+    &:active {
+      transform: scale(1)
+    }
+  }
+}

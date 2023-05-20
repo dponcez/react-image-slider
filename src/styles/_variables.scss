@@ -1,0 +1,24 @@
+:root {
+  // Primary colors
+  --dark-color : #020D1D;
+  --light-color: #fdfcfa;
+}
+
+// ========== VIEWPORT
+$width  : 100vw;
+$height : 100vh;
+// ========== SIZES
+$size   : 100%;
+$padding: 1.5rem;
+$radius : .5rem;
+// ========== FONTS
+$font-play: 'Play',
+sans-serif;
+$font-inter: 'Inter',
+sans-serif;
+$fnt-wgt  : .85;
+$fnt-sz   : calc(($padding * $fnt-wgt) + 1vmin);
+// ========== COLORS
+// Secondary colors
+$dark-blue: #11748A;
+$dark-orange: #e5661c;

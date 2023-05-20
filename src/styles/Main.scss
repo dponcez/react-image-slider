@@ -1,0 +1,47 @@
+@import '_variables';
+
+#dark {
+  background-color: var(--dark-color);
+  color: var(--light-color)
+}
+
+#light {
+  background-color: var(--light-color);
+  color: var(--dark-color)
+}
+
+#light .status { color: var(--dark-color) }
+#light .status a { color: $dark-blue }
+#dark .status a { color: $dark-orange }
+
+#light .button--container .btn svg {
+  fill: var(--dark-color)
+}
+
+#dark .button--container .btn svg {
+  fill: var(--light-color)
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .header {
+    padding-block-start: 3rem;
+    padding-block-end: 0;
+
+    .heading {
+      font-size: calc($fnt-sz * 1.75);
+      text-transform: capitalize;
+      font-family: $font-play;
+
+      @media screen and (max-width: 885px){
+        & {
+          font-size: calc($fnt-sz * 1.2)
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@import '_variables';
+
+.slider--container,
+.button--container,
+.image--container,
+.dots--container,
+.btn,
+.items,
+figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-trasnform: capitalize;
+    opacity: .75;
+  }
+}
+
+.slider--container {
+  width: $size;
+  max-width: 53rem;
+  margin-block-start: 1rem;
+  margin-block-end: 0;
+  .button--container {
+    .btn {
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      transition: transform 550ms ease-in;
+      cursor: pointer;
+    }
+
+    .chevron--left {
+      padding-inline-start: 0;
+      padding-inline-end: $radius;
+    }
+
+    .chevron--right {
+      padding-inline-start: $radius;
+      padding-inline-end: 0
+    }
+
+    &:hover .chevron--left { 
+      transform: scale(1.125); 
+    }
+
+    &:hover .chevron--right { 
+      transform: scale(1.125); 
+    }
+  }
+
+  .items {
+    overflow: hidden;
+    position: relative;
+    figure {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: inherit;
+      height: 30rem;
+      max-width: 50rem;
+      margin-inline: 0;
+      margin-block: 0;
+      padding-inline: 0;
+      padding-block: 0;
+
+      .image--container {
+        width: 50rem;
+        height: 55rem;
+        overflow: hidden;
+        border-radius:calc($radius * 1.25);
+        .image {
+          object-fit: fill;
+        }
+      }
+  
+      .description--container {
+          width: $size;
+          height: 8rem;
+          align-self: flex-start;
+          padding-block: 0;
+          padding-inline-start: calc($padding * 1.25);
+          background-color: transparent;
+          .status {
+              margin-block: .2rem;
+              margin-inline-start: calc($radius * .5);
+              color: var(--light-color);
+              text-transform: capitalize;
+          }
+          .description--name {
+              font-size: calc($padding * $fnt-wgt);
+              font-family: $font-inter;
+              font-weight: calc(700 * $fnt-wgt);
+              filter: sepia(1);
+          }
+          .description { 
+            font-size: .85rem;
+            font-family: $font-play;
+          }
+      }
+
+      @media screen and (max-width: 885px) {
+        & {
+          max-width: 35rem;
+
+          .description--container {
+            padding-inline-start: calc($padding * 1.0125);
+            .description--name {
+              font-size: calc($padding * .7)
+            }
+
+            .description {
+              font-size: .6rem;
+            }
+          }
+        }
+      }
+    }
+
+    .dots--container {
+      position: absolute;
+      bottom: -.5rem;
+      .dots--slider { 
+        .dots {
+          font-size: 3rem;
+          cursor: pointer;
+          @media screen and (max-width: 885px){
+            & {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+span {
+  display: block;
+  font-family: $font-inter;
+  font-weight: calc((700 * $fnt-wgt) + 1);
+}

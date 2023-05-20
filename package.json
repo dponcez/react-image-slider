@@ -1,0 +1,52 @@
+{
+  "name": "react-image-slider",
+  "version": "1.0.0",
+  "description": "react image slider",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "react",
+    "javascript"
+  ],
+  "author": "Damian Ponce",
+  "license": "ISC",
+  "dependencies": {
+    "compress": "^0.99.0",
+    "eslint-config-react-app": "^7.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-svg": "^16.1.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
