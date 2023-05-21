@@ -106,13 +106,11 @@ figure {
       @media screen and (max-width: 885px) {
         & {
           max-width: 35rem;
-
           .description--container {
             padding-inline-start: calc($padding * 1.0125);
             .description--name {
               font-size: calc($padding * .7)
             }
-
             .description {
               font-size: .6rem;
             }
