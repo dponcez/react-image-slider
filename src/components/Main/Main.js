@@ -7,22 +7,25 @@ import { dataImages } from '../../data/dataImages'
 import '../../styles/Main.scss'
 
 const Main = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem('theme') || 'dark'
-  )
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
   const ThemeContext = createContext(null)
 
   const toggleDarkMode = () => {
-    setTheme((currentTheme) =>  currentTheme === 'dark' ? 'light' : 'dark')
+    theme === 'dark' ? 
+      setTheme('light') : 
+      setTheme('dark')
   }
 
   useEffect(() => {
+
     localStorage.setItem('theme', theme);
     document.body.id = theme
+
   }, [theme])
 
   return (
-    <div className='container'>
+    <ThemeContext.Provider value={theme}>
+      <div className='container'>
       <DarkMode
         mode={
           theme === 'dark' ?
@@ -32,15 +35,12 @@ const Main = () => {
         theme={theme}
         onClick={toggleDarkMode}
       />
-      <ThemeContext.Provider 
-        value={{theme: toggleDarkMode}}
-      >
-      </ThemeContext.Provider>
-      <header className='header'>
-        <h1 className='heading'>simple react image slider</h1>
-      </header>
-      <ImageSlider slides={dataImages}/>
-    </div>
+        <header className='header'>
+          <h1 className='heading'>simple react image slider</h1>
+        </header>
+        <ImageSlider slides={dataImages}/>
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
