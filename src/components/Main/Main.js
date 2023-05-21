@@ -7,8 +7,9 @@ import { dataImages } from '../../data/dataImages'
 import '../../styles/Main.scss'
 
 const Main = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
   const ThemeContext = createContext(null)
+  const [theme, setTheme] = useState(
+    localStorage.getItem('theme') || 'dark')
 
   const toggleDarkMode = () => {
     theme === 'dark' ? 
@@ -17,10 +18,8 @@ const Main = () => {
   }
 
   useEffect(() => {
-
     localStorage.setItem('theme', theme);
     document.body.id = theme
-
   }, [theme])
 
   return (
