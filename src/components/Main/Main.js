@@ -1,29 +1,17 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useContext } from 'react'
 import { DarkMode } from '../DarkMode/DarkMode'
 import { ImageSlider } from '../ImageSlider/ImageSlider'
-import darkMode from "../../assets/images/dark-switch.png";
-import lightMode from "../../assets/images/light-switch.png";
+import { ThemeContext } from '../Context/Context'
+import darkMode from "../../assets/images/dark-switch.png"
+import lightMode from "../../assets/images/light-switch.png"
 import { dataImages } from '../../data/dataImages'
 import '../../styles/Main.scss'
 
 const Main = () => {
-  const ThemeContext = createContext(null)
-  const [theme, setTheme] = useState(
-    localStorage.getItem('theme') || 'dark')
-
-  const toggleDarkMode = () => {
-    theme === 'dark' ? 
-      setTheme('light') : 
-      setTheme('dark')
-  }
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.body.id = theme
-  }, [theme])
-
+  const [{theme}, toggleDarkMode] = useContext(ThemeContext)
+  
   return (
-    <ThemeContext.Provider value={theme}>
+    <>
       <div className='container'>
       <DarkMode
         mode={
@@ -39,7 +27,7 @@ const Main = () => {
         </header>
         <ImageSlider slides={dataImages}/>
       </div>
-    </ThemeContext.Provider>
+    </>
   )
 }
 
