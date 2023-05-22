@@ -111,8 +111,18 @@ figure {
             .description--name {
               font-size: calc($padding * .7)
             }
-            .description {
-              font-size: .6rem;
+            .description { font-size: .6rem; }
+          }
+        }
+      }
+
+      @media screen and (max-width: 654px) {
+        & {
+          max-width: 30rem;
+          .description--container {
+            padding-inline-start: calc($padding * .97);
+            .description--name {
+              font-size: calc($padding * .65)
             }
           }
         }
@@ -120,16 +130,24 @@ figure {
     }
 
     .dots--container {
+      height: 4rem;
       position: absolute;
       bottom: -.5rem;
-      .dots--slider { 
+      .dots--slider {
+        transition: 550ms ease-in; 
         .dots {
           font-size: 3rem;
           cursor: pointer;
           @media screen and (max-width: 885px){
-            & {
-              font-size: 2rem;
-            }
+            & { font-size: 2rem; }
+          }
+        }
+
+        &:hover .dots {
+          font-size: 3.5rem;
+          transition: font-size 550ms ease-out;
+          @media screen and (max-width: 885px){
+            & { font-size: 2.5rem; }
           }
         }
       }
