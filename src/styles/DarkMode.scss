@@ -1,3 +1,5 @@
+@import '_variables';
+
 .dark--mode__container {
   position: fixed;
   top: .6rem;
@@ -7,6 +9,8 @@
   .dark--mode__button {
     margin-block: 1em;
     margin-inline-end: 1em;
+
+    & img { height: calc($padding * .75); }
   }
 
   .btn {
