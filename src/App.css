@@ -1,9 +1,8 @@
 .App {
   display: grid;
   grid-template-columns: 1fr;
+  height: 100vh;
   position: relative;
-  padding-block-start: 0;
-  padding-inline-start: .5rem;
-  font-size: var(--font-size);
-  font-family: var(--ubuntu);
+  padding-block: 0;
+  padding-inline: 0;
 }
