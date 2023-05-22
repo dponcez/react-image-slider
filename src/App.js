@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import { Main } from './components/Main/Main'
+import { ThemeContextProvider } from './components/Context/Context'
 import './App.css'
 
 const App = () => {
   return (
-    <div className='App'>
-      <Main/>
-    </div>
+    <StrictMode>
+      <ThemeContextProvider>
+        <div className='App'>
+          <Main/>
+        </div>
+      </ThemeContextProvider>
+    </StrictMode>
   )
 }
 
